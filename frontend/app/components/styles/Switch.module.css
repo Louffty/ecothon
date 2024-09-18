@@ -1,0 +1,42 @@
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .toggleSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    transition: background-color 0.2s;
+  }
+  
+  .toggle-label .toggle-indicator {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  
+  input:checked + .toggle-label {
+    background-color: #009605;
+  }
+  
+  input:checked + .toggle-label .toggle-indicator {
+    transform: translateX(26px);
+  }

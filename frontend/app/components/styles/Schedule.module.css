@@ -1,0 +1,44 @@
+.classes_create_class_box {
+  z-index: 99999;
+    position: fixed;
+    width: 30%;
+    min-width: 400px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    display: inline-block;
+    /* height: ; */
+    padding-bottom: 1rem;
+    left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* backdrop-filter: blur(5px); */
+  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.458);
+}
+
+
+.classes_create_date {
+    display: block;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #009605;
+}
+.all_classes_class_box {
+  margin-top: 80px;
+    width: 60%;
+    min-width: 330px;
+    background-color: white;
+    
+    border-radius: 16px;
+    display: inline-block;
+    padding-bottom: .8rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  min-width: 370px;
+   max-width: 1000px;
+    margin-top: 30px;
+}

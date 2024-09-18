@@ -1,0 +1,29 @@
+.opacited_button {
+    font-size: 22px;
+    padding: .3rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #009605;
+    /* background-color: #A992EC; */
+    color: #f7f5ee;
+    font-family: 'Inter', sans-serif;
+    border-width: 2px;
+    font-weight: normal;
+    transition-duration: .3s;
+    background-color: #a8a8a825;
+    color: #009605;
+}
+
+.opacited_button:hover {
+    cursor: pointer;
+    border-color: #009605;
+    background-color: #009605;
+    color: white;
+}
+@media only screen and (max-width: 768px) {
+    .opacited_button {
+        font-size: 16px;
+    }
+}

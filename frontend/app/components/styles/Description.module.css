@@ -1,0 +1,42 @@
+.description_box {
+    width: 60%;
+    min-width: 400px;
+    background-color: #f7f5ee;
+    border-radius: 16px;
+    height: 700px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: .8rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    top: 50%;
+    margin-top: 80px;
+    left: 50%;
+    font-family: 'Inter', sans-serif;
+    transform: translate(-50%, 0%);
+}
+
+.triangle {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+    color: #009605;
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+  .vertical_bar {
+    width: 2px;
+    height: 100%;
+    background-color: #009605;
+    margin-right: 10px;
+    margin-left: -10px;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .active {
+    height: 30px;
+  }
+
+  
