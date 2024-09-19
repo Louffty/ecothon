@@ -1,0 +1,10 @@
+[project]
+name = "ecothon"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.12"
+dependencies = [
+    "aiocache>=0.12.2",
+    "asyncpg>=0.29.0",
+    "fastapi[standard]>=0.115.0",
+]
