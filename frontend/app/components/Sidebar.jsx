@@ -47,6 +47,21 @@ const Sidebar = ({ setView }) => {
           </button>
         </div>
         <hr className={styles.sidebar_hr} style={{ size: "5" }} />
+        {/* <div className={styles.sidebar_button_box}>
+          <button
+            onClick={() => setView("myevents")}
+            className={styles.sidebar_button}
+          >
+            <UserRound size={27} color="green" />
+            <p
+              className={styles.sidebar_button_p}
+              style={{ marginLeft: "10px", marginTop: "5px" }}
+            >
+              Мои мероприятия
+            </p>
+          </button>
+        </div>
+        <hr className={styles.sidebar_hr} style={{ size: "5" }} /> */}
 
         <div className={styles.sidebar_button_box}>
           <button
@@ -128,7 +143,7 @@ const Sidebar = ({ setView }) => {
         </div>
         <hr className={styles.sidebar_hr} />
 
-        <div className={styles.sidebar_button_box}>
+        {/* <div className={styles.sidebar_button_box}>
           <button
             onClick={() => setView("statistic")}
             className={styles.sidebar_button}
@@ -142,7 +157,7 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} />
+        <hr className={styles.sidebar_hr} /> */}
 
         <div className={styles.sidebar_button_box}>
           <button

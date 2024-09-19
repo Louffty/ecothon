@@ -10,6 +10,16 @@ const Conference = ({ conference }) => {
 
 
   const handleSubmit = async () => {
+    Toastify({
+      text: "Идет обработка, пожалуйста, ожидайте",
+      duration: 3000,
+      gravity: "bottom",
+      position: "right",
+      style: {
+        background: "#009605",
+        width: "100%",
+      },
+    }).showToast();
     console.log(conferenceData.url)
     try {
       const response = await fetchWithAuth(
@@ -57,21 +67,6 @@ const Conference = ({ conference }) => {
           color: "grey"
         }}>{conferenceData.description}</div>
         <div>
-          <iframe
-            width="300"
-            height="215"
-            style={{
-              borderStyle: "none",
-              borderRadius: "16px"
-            }}
-            src={`https://www.youtube.com/embed/${conferenceData.url.split('/').pop()}`}
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-
-
-
-          
       <iframe
         width="720"
         height="405"

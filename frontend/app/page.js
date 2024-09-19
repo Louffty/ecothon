@@ -16,6 +16,7 @@ import Header from "./components/base/Header";
 import Conference from "./components/Conference";
 import MyOnlineEvent from "./components/MyOnlineEvent";
 import Statistic from "./components/Statistic";
+import AllUserEvents from "./components/AllUserEvents";
 
 const Home = () => {
   const [view, setView] = useState("answer");
@@ -34,6 +35,7 @@ const Home = () => {
           
           <div>
             {view === "answer" && <AnswerQuestions setView={setView} />}
+            {view === "myevents" && <AllUserEvents setView={setView} />}
             {view === "statistic" && <Statistic setView={setView} />}
             {view === "userevent" && <MyOnlineEvent setView={setView} />}
             {view === "question" && <AddQuestion setView={setView} />}

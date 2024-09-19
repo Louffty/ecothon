@@ -75,7 +75,7 @@ const AddAnswer = ({ question }) => {
     }
   };
 
-  console.log(user)
+  console.log(user);
   const addAnswer = async () => {
     try {
       const response = await fetchWithAuth(
@@ -99,16 +99,14 @@ const AddAnswer = ({ question }) => {
         console.error("Error submitting question");
       }
     } catch (error) {
-      
       console.error("Error:", error);
-      
     }
   };
-  console.log(data)
-  console.log(user)
+  console.log(data);
+  console.log(user);
   return (
     <>
-      {/* исправить именя пользователя, проблема бека */}
+      
       <div className={styles.question_box}>
         <div className={answerQuestionStyles.question_preview_user_box}>
           <img
@@ -126,8 +124,7 @@ const AddAnswer = ({ question }) => {
           <p className={answerQuestionStyles.question_preview_rank}>
             {data?.question.author?.rate}
           </p>
-          
-          
+
           <div
             className={answerQuestionStyles.question_preview_cost}
             style={{
@@ -145,7 +142,7 @@ const AddAnswer = ({ question }) => {
             />
           </div>
         </div>
-        <div className={styles.question_title} style={{marginTop: "10px"}}>
+        <div className={styles.question_title} style={{ marginTop: "10px" }}>
           {data ? data.question.header : "Loading..."}
         </div>
         <div className={styles.question_description}>
@@ -215,7 +212,8 @@ const AddAnswer = ({ question }) => {
             style={{ height: "300px", width: "97%", marginLeft: "1.5%" }}
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
-          />          <div
+          />{" "}
+          <div
             className={styles.question_preview_answer_button_wrapper}
             style={{
               margin: "auto",
@@ -224,7 +222,6 @@ const AddAnswer = ({ question }) => {
               float: "right",
             }}
           >
-           
             <OpacitedButton
               onClick={addAnswer}
               title={"Отправить"}
@@ -233,7 +230,7 @@ const AddAnswer = ({ question }) => {
         </div>
       )}
 
-      <hr style={{width:'100%', marginTop:'2%'}}></hr>
+      <hr style={{ width: "100%", marginTop: "2%" }}></hr>
       <div>
         {data?.answers?.length > 0 ? (
           data?.answers?.map((answer) => (
@@ -253,10 +250,11 @@ const AddAnswer = ({ question }) => {
                 </p>
                 <hr className={answerQuestionStyles.question_preview_hr} />
                 <p className={answerQuestionStyles.question_preview_rank}>
-                  {answer.author.rate}
+                  {answer.author.role}
                 </p>
 
-                {user?.uuid == data?.question.author?.uuid && data.question.closed == false ? (
+                {user?.uuid == data?.question.author?.uuid &&
+                data.question.closed == false ? (
                   <div
                     style={{
                       margin: "auto",
@@ -313,15 +311,14 @@ const AddAnswer = ({ question }) => {
               textAlign: "center",
               fontSize: "2vh",
             }}
-          >
-          </div>
+          ></div>
         )}
       </div>
       <br />
-    <br />
-    <br />
-    <br />
-    <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };

@@ -3,7 +3,7 @@
     width: 60%;
     min-width: 400px;
     padding-bottom: 3.5rem;
-    background-color: #ffffff;
+    background-color: #dbdbdb;
     border-radius: 16px;
     display: inline-block;
     padding-left: .3rem;
@@ -13,6 +13,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
+
 }
 .profile_user_data_box {
     margin-top: 35px;
@@ -58,9 +59,36 @@
     font-weight: bold;
     color: black;
     margin-right: 5%;
-    
-    
-    /* margin-top: -170px; */
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  border-radius: 2px;
+  border-color: #6B6B6B;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  position: relative;
+  border-radius: 2px;
+  border-color: #6B6B6B;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
     .profile_cookies_count_box {

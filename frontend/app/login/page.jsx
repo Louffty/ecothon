@@ -14,27 +14,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  useEffect(() => {
-    const getCookies = () => {
-      const cookies = document.cookie.split("; ").reduce((acc, current) => {
-        const [name, value] = current.split("=");
-        acc[name] = decodeURIComponent(value);
-        return acc;
-      }, {});
-
-      return cookies;
-    };
-
-    const cookies = getCookies();
-    console.log(cookies)
-
-    if (token) {
-      router.push("/");
-    } else {
-      console.log(cookies);
-    }
-  }, [router]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -86,6 +65,10 @@ export default function Login() {
       console.error(error);
     }
   };
+  const handleRedirect = () => {
+    window.location.href =
+      "https://nothypeproduction.space/api/v1/oauth/vk_login";
+  };
 
   return (
     <main>
@@ -94,12 +77,12 @@ export default function Login() {
           <div className={styles.welcome_message_box}>
             <p className={styles.welcome_message}>
               Вход в{" "}
-              <span className={styles.welcome_message_title}>BIZKIT</span>
+              <span className={styles.welcome_message_title}>Экотипы</span>
             </p>
           </div>
 
           <div className={stylesForInput.input_box}>
-            <p className={stylesForInput.input_title}>Почта</p>
+            <p className={stylesForInput.input_title}>Имя пользователя</p>
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -124,7 +107,6 @@ export default function Login() {
               type={"submit"}
             />
           </div>
-
           <div className={styles.button_box}>
             <OpacitedButton
               title={"Создать аккаунт"}
@@ -133,6 +115,7 @@ export default function Login() {
               }}
             />
           </div>
+          <button onClick={handleRedirect}>Авторизация через VK</button>
         </div>
       </form>
     </main>

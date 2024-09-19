@@ -39,7 +39,7 @@ const MapApp = () => {
     lng: "",
   });
   const [center, setCenter] = useState([55.7522, 37.6156]);
-
+  const [rec, setRec] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const selectorChange = (event) => {
@@ -70,6 +70,24 @@ const MapApp = () => {
     addEvents();
   }, []);
 
+    const GetRec = async () => {
+      try {
+        const url = `https://nothypeproduction.space/api/v1/event/myRec`;
+        const response = await fetchWithAuth(url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await response.json();
+        setRec(data);
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    
+
   const mapRef = useRef(null);
 
   const handleSelectChange = (event) => {
@@ -81,7 +99,7 @@ const MapApp = () => {
   };
 
   const registerToEvent = async (uuid) => {
-    console.log(uuid)
+    console.log(uuid);
     try {
       const response = await fetchWithAuth(
         "https://nothypeproduction.space/api/v1/eventsusers/create",
@@ -90,10 +108,10 @@ const MapApp = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({eventUUID: uuid })
+          body: JSON.stringify({ eventUUID: uuid }),
         }
       );
-      
+
       const responseData = await response.json();
       if (response.ok) {
         console.log("all okay");
@@ -397,7 +415,9 @@ const MapApp = () => {
                   <p>Описание: {marker?.data?.description}</p>
                   <p>Начало: {convertTime(marker?.data?.start_time)}</p>
                   <p>Адрес: {marker?.data?.address}</p>
-                  <button onClick={() => registerToEvent(marker?.data?.uuid)}>Зарегистрироваться</button>
+                  <button onClick={() => registerToEvent(marker?.data?.uuid)}>
+                    Зарегистрироваться
+                  </button>
                 </div>
               </Popup>
             </Marker>
@@ -445,21 +465,35 @@ const MapApp = () => {
               onClick={getCoordinatesFromAddress}
             />
           </div>
+
           <div className={styles.list}>
-        {markerData.map((marker, index) => (
-          <div key={index}>
-            <p>Название: {marker?.data?.title}</p>
-            <p>Описание: {marker?.data?.description}</p>
-            <p>Начало: {convertTime(marker?.data?.start_time)}</p>
-            <p>Адрес: {marker?.data?.address}</p>
-            <button onClick={() => registerToEvent(marker?.data?.uuid)}>Зарегистрироваться</button>
+            <button  onClick={GetRec}>Подобрать мероприятия</button>
+            {rec?.body?.map((rec, index) => (
+              <div key={index} style={{backgroundColor:'green'}}>
+              <p>Название: {rec?.title}</p>
+              <p>Описание: {rec?.description}</p>
+              <p>Начало: {convertTime(rec?.start_time)}</p>
+              <p>Адрес: {rec?.address}</p>
+              <button onClick={() => registerToEvent(rec?.uuid)}>
+                Зарегистрироваться
+              </button>
+            </div>
+            ))}
+            <div>Все мероприятия</div>
+            {markerData.map((marker, index) => (
+              <div key={index}>
+                <p>Название: {marker?.data?.title}</p>
+                <p>Описание: {marker?.data?.description}</p>
+                <p>Начало: {convertTime(marker?.data?.start_time)}</p>
+                <p>Адрес: {marker?.data?.address}</p>
+                <button onClick={() => registerToEvent(marker?.data?.uuid)}>
+                  Зарегистрироваться
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
         </div>
       </div>
-
-     
     </>
   );
 };
