@@ -1,18 +1,9 @@
-import {
-  UserRound,
-  SquareArrowLeft,
-  BookText,
-  Radio,
-  MessageCircleQuestion,
-  CircleHelp,
-  TvMinimalPlay,
-  MailQuestion,
-  CalendarFold,
-  MapPinned,
-} from "lucide-react";
+
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "./styles/Sidebar.module.css";
+import { CalendarFold, CircleHelp, MailQuestion, MapPinned, MessageCircleQuestion, SquareArrowLeft, UserRound } from "lucide-react";
+
 
 const Sidebar = ({ setView }) => {
   const router = useRouter();
@@ -46,22 +37,7 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
-        {/* <div className={styles.sidebar_button_box}>
-          <button
-            onClick={() => setView("myevents")}
-            className={styles.sidebar_button}
-          >
-            <UserRound size={27} color="green" />
-            <p
-              className={styles.sidebar_button_p}
-              style={{ marginLeft: "10px", marginTop: "5px" }}
-            >
-              Мои мероприятия
-            </p>
-          </button>
-        </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} /> */}
+      
 
         <div className={styles.sidebar_button_box}>
           <button
@@ -77,7 +53,7 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
+
 
         <div className={styles.sidebar_button_box}>
           <button
@@ -93,7 +69,7 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
+
 
         <div className={styles.sidebar_button_box}>
           <button
@@ -109,7 +85,6 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
 
         <div className={styles.sidebar_button_box}>
           <button
@@ -125,7 +100,7 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
+
 
         <div className={styles.sidebar_button_box}>
           <button
@@ -137,34 +112,17 @@ const Sidebar = ({ setView }) => {
               className={styles.sidebar_button_p}
               style={{ marginLeft: "10px", marginTop: "5px" }}
             >
-              Карта
+              Оффлайн
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} />
-
-        {/* <div className={styles.sidebar_button_box}>
-          <button
-            onClick={() => setView("statistic")}
-            className={styles.sidebar_button}
-          >
-            <MapPinned size={27} color="#009605" />
-            <p
-              className={styles.sidebar_button_p}
-              style={{ marginLeft: "10px", marginTop: "5px" }}
-            >
-              Графики
-            </p>
-          </button>
-        </div>
-        <hr className={styles.sidebar_hr} /> */}
 
         <div className={styles.sidebar_button_box}>
           <button
             onClick={() => setView("userevent")}
             className={styles.sidebar_button}
           >
-            <BookText size={27} color="#009605" />
+           
             <p
               className={styles.sidebar_button_p}
               style={{ marginLeft: "10px", marginTop: "5px" }}
@@ -173,27 +131,10 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
-
-        <div className={styles.sidebar_button_box}>
-          <button
-            onClick={() => setView("description")}
-            className={styles.sidebar_button}
-          >
-            <BookText size={27} color="#009605" />
-            <p
-              className={styles.sidebar_button_p}
-              style={{ marginLeft: "10px", marginTop: "5px" }}
-            >
-              Про проект
-            </p>
-          </button>
-        </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
 
         <div className={styles.sidebar_button_box}>
           <button onClick={handleLogout} className={styles.sidebar_button}>
-            <SquareArrowLeft size={27} color="#009605" />
+             <SquareArrowLeft size={27} color="#009605" />
             <p
               className={styles.sidebar_button_p}
               style={{ marginLeft: "10px", marginTop: "5px" }}
@@ -202,7 +143,7 @@ const Sidebar = ({ setView }) => {
             </p>
           </button>
         </div>
-        <hr className={styles.sidebar_hr} style={{ size: "5" }} />
+
       </nav>
     </div>
   );

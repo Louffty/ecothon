@@ -97,13 +97,13 @@ export default function Register() {
           </div>
 
           <div className={stylesForInput.input_box}>
-            <p className={stylesForInput.input_title}>Электронная почта</p>
+            <p className={stylesForInput.input_title}>Электронный адрес</p>
             <input value={email} onChange={handleEmailChange} className={stylesForInput.input} type="text" />
             {emailError && <div className={styles.error_message}>{emailError}</div>}
           </div>
 
           <div className={stylesForInput.input_box}>
-            <p className={stylesForInput.input_title}>Юзернейм</p>
+            <p className={stylesForInput.input_title}>Имя пользователя</p>
             <input value={username} onChange={handleUsernameChange} className={stylesForInput.input} type="text" />
           </div>
 

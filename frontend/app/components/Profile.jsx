@@ -104,8 +104,8 @@ const Profile = () => {
 
                 <p className={styles.profile_rank}>{user?.rate}</p>
                 <div style={{ marginRight: "2%" }}>
-                  {user?.verify ? (
-                    <p>Пользователь верифицирован</p>
+                  {user?.is_verified ? (
+                    <p style={{color:'green'}}>Верифицировано</p>
                   ) : (
                     <>
                       <button onClick={handleVerifyClick}>Верификация</button>
@@ -161,7 +161,7 @@ const Profile = () => {
           </p>
         </div>
 
-        {user?.events?.events.map((event, index) => (
+        {user?.events?.events?.map((event, index) => (
           <div
             key={index}
             style={{

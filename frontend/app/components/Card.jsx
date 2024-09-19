@@ -389,6 +389,7 @@ const MapApp = () => {
             </option>
           ))}
         </select>
+        <div>
         <MapContainer
           ref={mapRef}
           center={[55.7522, 37.6156]}
@@ -411,6 +412,8 @@ const MapApp = () => {
             >
               <Popup>
                 <div>
+                {marker?.data?.author?.is_verified ? (<p>Верифицированный организатор</p>) : (<>Организатор не верифицирован</>)}
+
                   <p>Название: {marker?.data?.title}</p>
                   <p>Описание: {marker?.data?.description}</p>
                   <p>Начало: {convertTime(marker?.data?.start_time)}</p>
@@ -433,6 +436,7 @@ const MapApp = () => {
             >
               <Popup>
                 <div>
+
                   <p>Название: {newMarkerData?.title}</p>
                   <p>Описание: {newMarkerData?.description}</p>
                   <p>Начало: {convertTime(newMarkerData?.start_time)}</p>
@@ -465,28 +469,39 @@ const MapApp = () => {
               onClick={getCoordinatesFromAddress}
             />
           </div>
+        </div>
+        
 
           <div className={styles.list}>
-            <button  onClick={GetRec}>Подобрать мероприятия</button>
+            <button  onClick={GetRec} className={styles.btn}>Подобрать мероприятия</button>
             {rec?.body?.map((rec, index) => (
-              <div key={index} style={{backgroundColor:'green'}}>
+              
+              <div key={index} className={styles.rec_item}>
+
+              {rec?.author?.is_verified ? (<p>Верифицированный организатор</p>) : (<>Организатор не верифицирован</>)}
               <p>Название: {rec?.title}</p>
               <p>Описание: {rec?.description}</p>
               <p>Начало: {convertTime(rec?.start_time)}</p>
               <p>Адрес: {rec?.address}</p>
-              <button onClick={() => registerToEvent(rec?.uuid)}>
+              <button onClick={() => registerToEvent(rec?.uuid)} className={styles.reg_btn}>
                 Зарегистрироваться
               </button>
             </div>
             ))}
-            <div>Все мероприятия</div>
+
+            <div className={styles.main_text}>Все мероприятия</div>
             {markerData.map((marker, index) => (
-              <div key={index}>
+              <div key={index} className={styles.item}>
+
+                <div style={{ color: marker?.data?.author?.is_verified ? 'green' : 'black' }}>
+                  {marker?.data?.author?.is_verified ? (<p>Верифицированный организатор</p>) : (<>Организатор не верифицирован</>)}
+                </div>
+
                 <p>Название: {marker?.data?.title}</p>
                 <p>Описание: {marker?.data?.description}</p>
                 <p>Начало: {convertTime(marker?.data?.start_time)}</p>
                 <p>Адрес: {marker?.data?.address}</p>
-                <button onClick={() => registerToEvent(marker?.data?.uuid)}>
+                <button onClick={() => registerToEvent(marker?.data?.uuid)} className={styles.reg_btn}>
                   Зарегистрироваться
                 </button>
               </div>

@@ -45,6 +45,79 @@
   margin: auto;
   position: relative;
   margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  border: #333 solid 4px;
+  border-radius: 20px;
+  align-items: center;
+  padding: 5px;
+}
+
+.btn {
+  font-size: 140%;
+    padding: .3rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #009605;
+    background-color: #00bd06;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    border-width: 4px;
+    font-weight: normal;
+    transition-duration: .3s;
+}
+
+.btn:hover {
+  cursor: pointer;
+    background-color: #e6e6e625;
+    color: #009605;
+}
+
+.reg_btn {
+  font-size: 100%;
+  margin-top: 5px;
+    padding: .3rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #009605;
+    background-color: #00bd06;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    border-width: 2px;
+    font-weight: normal;
+    transition-duration: .3s;
+}
+
+.reg_btn:hover {
+  cursor: pointer;
+    background-color: #e6e6e625;
+    color: #009605;
+}
+
+.item {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #e6e6e625;
+  border: #333 solid 3px;
+  border-radius: 15px;
+}
+
+.rec_item {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #3e7c4354;
+  border: #333 solid 3px;
+  border-radius: 15px;
+}
+
+.main_text {
+  font-size: 250%;
 }
 
 @media only screen and (max-width: 768px) {

@@ -3,11 +3,11 @@ import styles from "../components/styles/LoginForm.module.css";
 import OpacitedButton from "../components/ui/opacitedButton";
 import PurpleButton from "../components/ui/purpleButton";
 import stylesForInput from "../components/styles/DefaultInput.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Header from "../components/base/Header";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
+import VkButton from "../components/ui/vkButton";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -77,7 +77,7 @@ export default function Login() {
           <div className={styles.welcome_message_box}>
             <p className={styles.welcome_message}>
               Вход в{" "}
-              <span className={styles.welcome_message_title}>Экотипы</span>
+              <span className={styles.welcome_message_title}>ЭКОТИПЫ</span>
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function Login() {
 
           <div className={styles.button_box}>
             <PurpleButton
-              style={{ width: "200%" }}
+              style={{width: "200%"}}
               title={"Войти"}
               type={"submit"}
             />
@@ -115,7 +115,14 @@ export default function Login() {
               }}
             />
           </div>
-          <button onClick={handleRedirect}>Авторизация через VK</button>
+
+          <div className={styles.button_box}>
+            <VkButton
+              style={{width: "200%"}}
+              title={"Авторизация через VK"}
+              onClick={handleRedirect}
+            />
+          </div>
         </div>
       </form>
     </main>

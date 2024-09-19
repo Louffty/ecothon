@@ -1,0 +1,28 @@
+.vk_button {
+    font-size: 140%;
+    padding: .3rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: #005cb6;
+    background-color: #0077ff;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    border-width: 2px;
+    font-weight: normal;
+    transition-duration: .3s;
+}
+
+.vk_button:hover {
+    cursor: pointer;
+    background-color: #71aaeb;
+}
+
+@media only screen and (max-width: 768px) {
+    .vk_button {
+        font-size: 16px;
+        margin-top: 4px;
+        /* margin-left: 40px; */
+    }
+}

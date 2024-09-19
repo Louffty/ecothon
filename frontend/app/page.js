@@ -6,7 +6,6 @@ import AddQuestion from "./components/AddQuestion";
 import AnswerQuestions from "./components/AnswerQuestions";
 import Sidebar from "./components/Sidebar";
 import Card from "./components/Card";
-import Description from "./components/Description";
 import Shedule from "./components/Shedule";
 import Profile from "./components/Profile";
 import UserQuestions from "./components/UserQuestions";
@@ -27,7 +26,6 @@ const Home = () => {
   }, []);
   return (
     <>
-      <Header></Header>
       <Sidebar view={view} setView={setView} />
       {isClient && (
         <div>

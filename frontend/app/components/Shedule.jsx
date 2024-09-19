@@ -69,34 +69,34 @@ const Schedule = () => {
       if (response.ok) {
         setConferences([data, ...conference]);
         handleCloseModal();
-        // Toastify({
-        //   text: "Лекция успешно добавлена, обновите страницу",
-        //   duration: 3000,
-        //   newWindow: true,
-        //   gravity: "bottom",
-        //   position: "right",
-        //   stopOnFocus: true,
-        //   style: {
-        //     background: "#7950F2",
-        //     width: "100%",
-        //   },
-        //   onClick: function () {},
-        // }).showToast();
+        Toastify({
+          text: "Лекция успешно добавлена, обновите страницу",
+          duration: 3000,
+          newWindow: true,
+          gravity: "bottom",
+          position: "right",
+          stopOnFocus: true,
+          style: {
+            background: "#7950F2",
+            width: "100%",
+          },
+          onClick: function () {},
+        }).showToast();
       } else {
         console.error("Error submitting conference:", response.status);
-        // Toastify({
-        //   text: "Произошла ошибка",
-        //   duration: 3000,
-        //   newWindow: true,
-        //   gravity: "bottom",
-        //   position: "right",
-        //   stopOnFocus: true,
-        //   style: {
-        //     background: "#7950F2",
-        //     width: "100%",
-        //   },
-        //   onClick: function () {},
-        // }).showToast();
+        Toastify({
+          text: "Произошла ошибка",
+          duration: 3000,
+          newWindow: true,
+          gravity: "bottom",
+          position: "right",
+          stopOnFocus: true,
+          style: {
+            background: "#7950F2",
+            width: "100%",
+          },
+          onClick: function () {},
+        }).showToast();
       }
     } catch (error) {
       console.error("Error submitting conference:", error);
@@ -151,7 +151,7 @@ const Schedule = () => {
           style={{ textAlign: "center" }}
         >
           <DefaultInput
-            title={"Предмет"}
+            title={"Тема"}
             type={"text"}
             onChange={(e) => setTitle(e.target.value)}
             value={title}
