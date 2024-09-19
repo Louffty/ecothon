@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { fetchWithAuth } from '../utils/api';
-import DefaultInput from './ui/defaultInput';
-import PurpleButton from './ui/purpleButton';
 import OpacitedButton from './ui/opacitedButton';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
+import styles from './styles/Conference.module.css'
+
+
 const Conference = ({ conference }) => {
   const [conferenceData, setConferenceData] = useState(conference);
 
@@ -20,7 +21,6 @@ const Conference = ({ conference }) => {
         width: "100%",
       },
     }).showToast();
-    console.log(conferenceData.url)
     try {
       const response = await fetchWithAuth(
         "https://nothypeproduction.space/summarize/generate",
@@ -37,7 +37,10 @@ const Conference = ({ conference }) => {
       const responseData = await response.json();
      
       
-      document.getElementById('summary-container').innerHTML = responseData.content;
+      document.getElementById('summary-container').innerHTML = responseData.content.replaceAll("<a href", "<br> <a href");
+
+      document.getElementById("summary-button-container").hidden = true;
+      document.getElementById("summary-container").hidden = false;
     } catch (error) {
       console.error("Error:", error);
       
@@ -48,8 +51,8 @@ const Conference = ({ conference }) => {
   return (
     <>
       <div style={{
-        width: "300px",
         margin: "30px auto",
+        marginTop: "3.5rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
@@ -58,7 +61,7 @@ const Conference = ({ conference }) => {
           fontFamily: "'Inter', sans-serif",
           fontSize: "22px",
           fontWeight: "bold",
-          color: "grey"
+          color: "black"
         }}>{conferenceData.title}</div>
         <div style={{
           fontFamily: "'Inter', sans-serif",
@@ -79,10 +82,10 @@ const Conference = ({ conference }) => {
       ></iframe>
     
         </div>
-        <div id='summary-container'></div>
-        <div style={{ marginTop: "20px" }}>
+        <div id="summary-button-container" style={{ marginTop: "20px" }}>
           <OpacitedButton title={"Краткое содержание"} onClick={handleSubmit}></OpacitedButton>
         </div>
+        <div id='summary-container' className={styles.summary_decription} style={{ marginTop: "20px" }} hidden={true}></div>
       </div>
     </>
   );

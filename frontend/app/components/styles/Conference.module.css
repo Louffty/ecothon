@@ -1,0 +1,17 @@
+.summary_decription {
+    font-family: 'Inter', sans-serif;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 8px;
+    border-color: rgb(163, 163, 163);
+    background-color: white;
+    outline: none;
+    font-size: 20px;
+    width: 60%;
+    resize: none;
+    height: 500px;
+    transition-duration: .3s;
+    padding-left: 5px;
+    padding-top: 5px;
+    overflow-y: scroll;
+}

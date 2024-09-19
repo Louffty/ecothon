@@ -63,7 +63,7 @@ const AllConferences = ({setView}) => {
     <>
     {selectedConference ? (<Conference conference={selectedConference}/>):(
     <div>
-      <div className={questionPreviewStyles.buttonGroup} style={{display: "flex", width: "320px", padding: "1rem", margin: "auto",marginTop: "10px", }}  >
+      <div className={questionPreviewStyles.buttonGroup} style={{display: "flex", width: "320px", padding: "1rem", margin: "auto",marginTop: "3.5rem", }}  >
         <OpacitedButton title={"Архивные"} onClick={() => setIsArchived(true)} className={`${questionPreviewStyles.button} ${isArchived ? questionPreviewStyles.activeButton : ""}`}></OpacitedButton>
         <OpacitedButton title={"Предстоящие"} onClick={() => setIsArchived(false)} className={`${questionPreviewStyles.button} ${isArchived ? questionPreviewStyles.activeButton : ""}`}></OpacitedButton>
       </div>

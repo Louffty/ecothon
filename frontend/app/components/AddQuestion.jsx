@@ -44,8 +44,8 @@ const AddQuestion = ({ setView }) => {
             className={stylesForInput.input_box}
             style={{ marginTop: "10px", marginLeft: "2%" }}
           >
-            <p className={stylesForInput.input_title}>Тема </p>
             <input
+              placeholder="Тема"
               value={header}
               onChange={(e) => setHeader(e.target.value)}
               className={stylesForInput.input}
